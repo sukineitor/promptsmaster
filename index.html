@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="es" class="bg-neutral-950 text-white font-inter">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Códice Cifrado</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Electrolize&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --neon-green: #39ff14;
+        }
+
+        .font-electrolize {
+            font-family: 'Electrolize', sans-serif;
+        }
+
+        .neon-glow-text {
+            text-shadow: 0 0 5px var(--neon-green), 0 0 10px var(--neon-green), 0 0 20px var(--neon-green);
+        }
+
+        .neon-glow-button {
+            box-shadow: 0 0 10px var(--neon-green);
+            transition: box-shadow 0.3s ease;
+        }
+
+        .neon-glow-button:hover {
+            box-shadow: 0 0 20px var(--neon-green), 0 0 30px var(--neon-green);
+        }
+
+        .glitch {
+            animation: glitch-anim 2s infinite linear alternate-reverse;
+        }
+
+        @keyframes glitch-anim {
+            0% { transform: translate(0); }
+            20% { transform: translate(-2px, 2px); }
+            40% { transform: translate(-2px, -2px); }
+            60% { transform: translate(2px, 2px); }
+            80% { transform: translate(2px, -2px); }
+            100% { transform: translate(0); }
+        }
+
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .hero-bg {
+            background-image: radial-gradient(circle at center, rgba(57, 255, 20, 0.1), transparent 70%);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .codex-reveal {
+            animation: fadeInScale 1s ease-out forwards;
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden relative">
+
+    <!-- Sección Hero -->
+    <section class="min-h-screen relative flex items-center justify-center text-center px-4 py-16 overflow-hidden">
+        <div class="hero-bg z-0"></div>
+        <div class="absolute inset-0 bg-neutral-950 opacity-50 z-10"></div>
+        <!-- Contenido principal -->
+        <div class="relative z-20 max-w-4xl mx-auto flex flex-col items-center gap-6 md:flex-row md:text-left md:items-start md:gap-12">
+            <!-- Ilustración de portal etéreo/interfaz tecnológica -->
+            <div class="w-full md:w-1/2 h-64 md:h-96 rounded-2xl overflow-hidden">
+                <img src="fondo.jpeg" alt="Ilustración de portal etéreo" class="w-full h-full object-cover">
+            </div>
+            <!-- Título y CTA -->
+            <div class="flex-1">
+                <h1 class="font-electrolize text-4xl md:text-6xl font-bold leading-tight neon-glow-text mb-4">
+                    Desbloquea el Códice Perdido
+                </h1>
+                <p class="text-neutral-400 text-lg md:text-xl mb-8">
+                    Fragmentos de la biblioteca prohibida esperan ser revelados. La verdad te espera, si te atreves a buscarla.
+                </p>
+                <a href="#mision-section" class="inline-block py-3 px-8 rounded-full bg-neutral-800 text-lg font-bold neon-glow-button text-white border-2 border-green-500">
+                    Comienza tu Búsqueda
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Misión -->
+    <section id="mision-section" class="bg-neutral-900 py-20 px-4">
+        <div class="max-w-6xl mx-auto text-center">
+            <h2 class="font-electrolize text-3xl md:text-4xl text-green-400 mb-8 glitch">
+                La Misión
+            </h2>
+            <p class="text-neutral-300 max-w-2xl mx-auto mb-12">
+                Un texto místico se ha fragmentado en glifos arcanos. Solo al restaurar la secuencia correcta podrás acceder a su contenido. Tu viaje comienza aquí.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-neutral-800 p-6 rounded-xl border border-neutral-700">
+                    <span class="block text-3xl text-green-400 mb-4">❖</span>
+                    <h3 class="text-xl font-bold font-electrolize mb-2">Descubre los Glifos</h3>
+                    <p class="text-sm text-neutral-400">Cada glifo contiene una clave para la verdad.</p>
+                </div>
+                <div class="bg-neutral-800 p-6 rounded-xl border border-neutral-700">
+                    <span class="block text-3xl text-green-400 mb-4">⛭</span>
+                    <h3 class="text-xl font-bold font-electrolize mb-2">Restaura la Secuencia</h3>
+                    <p class="text-sm text-neutral-400">El orden es tan importante como el glifo mismo.</p>
+                </div>
+                <div class="bg-neutral-800 p-6 rounded-xl border border-neutral-700">
+                    <span class="block text-3xl text-green-400 mb-4">✧</span>
+                    <h3 class="text-xl font-bold font-electrolize mb-2">Accede al Conocimiento</h3>
+                    <p class="text-sm text-neutral-400">La recompensa por tu perspicacia es un saber invaluable.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Juego/Desafío Interactivo -->
+    <section id="desafio-section" class="bg-neutral-950 py-20 px-4">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 id="challenge-title" class="font-electrolize text-3xl md:text-4xl text-green-400 mb-8 glitch">
+                El Desafío de los Glifos
+            </h2>
+            <p id="challenge-instructions" class="text-neutral-400 mb-8">
+                Haz clic en los glifos en el orden correcto para desbloquear el Códice.
+            </p>
+            <!-- Pista del desafío -->
+            <div class="flex items-center justify-center gap-2 mb-8">
+                <span class="text-xl">💡</span>
+                <span id="challenge-hint" class="text-neutral-500 text-sm font-electrolize">
+                    Encuentra el glifo gemelo para sincronizar la matriz.
+                </span>
+            </div>
+            <div id="glyphs-container" class="grid grid-cols-3 md:grid-cols-6 gap-4 p-8 bg-neutral-900 rounded-2xl border-2 border-neutral-800">
+                <!-- Los glifos se generarán con JavaScript -->
+            </div>
+            <div id="challenge-message" class="mt-8 text-xl font-electrolize text-green-400"></div>
+        </div>
+    </section>
+
+    <!-- Sección de Recompensa -->
+    <section id="reward-section" class="bg-neutral-900 py-20 px-4 hidden">
+        <div class="max-w-4xl mx-auto text-center">
+            <div class="codex-reveal">
+                <h2 class="font-electrolize text-4xl md:text-5xl font-bold text-green-400 mb-6 neon-glow-text">
+                    ¡CÓDICE DESBLOQUEADO!
+                </h2>
+                <p class="text-neutral-300 text-lg mb-8">
+                    Has demostrado ser digno. El conocimiento te es concedido.
+                </p>
+                <div class="w-48 h-64 mx-auto rounded-xl mb-8 overflow-hidden border border-neutral-700">
+                    <!-- Portada del PDF -->
+                    <img src="image.png" alt="Portada del Códice Cifrado" class="w-full h-full object-cover">
+                </div>
+                <a id="download-button" href="assets/pdfs/Codice_Cifrado.pdf" download="Codice_Cifrado.pdf" class="inline-block py-4 px-10 rounded-full bg-green-600 text-lg font-bold neon-glow-button text-white border-2 border-green-500">
+                    Descargar PDF
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-neutral-950 py-8 text-center text-neutral-500 text-sm">
+        <div class="max-w-6xl mx-auto">
+            <p>&copy; 2025 Códice Cifrado. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const glyphsContainer = document.getElementById('glyphs-container');
+            const challengeMessage = document.getElementById('challenge-message');
+            const challengeTitle = document.getElementById('challenge-title');
+            const challengeInstructions = document.getElementById('challenge-instructions');
+            const challengeHint = document.getElementById('challenge-hint');
+            const rewardSection = document.getElementById('reward-section');
+
+            let currentChallenge = 1;
+            let userSelection = [];
+            let isProcessing = false;
+
+            // Define todos los desafíos en un objeto
+            const CHALLENGES = {
+                1: {
+                    title: 'Desafío de la Sincronía',
+                    instructions: 'Haz clic en el par de glifos idénticos para avanzar.',
+                    hint: 'La armonía se encuentra en el eco de un mismo símbolo.',
+                    glyphs: ['A', 'B', 'C', 'D', 'E', 'B', 'F', 'G'],
+                    targetClicks: 2
+                },
+                2: {
+                    title: 'El Enigma Cuántico',
+                    instructions: 'Encuentra dos glifos cuya suma sea 7.',
+                    hint: 'El portal se abre con la suma de los fragmentos correctos.',
+                    glyphs: ['1', '2', '3', '4', '5', '6'],
+                    targetClicks: 2
+                },
+                3: {
+                    title: 'La Secuencia Críptica',
+                    instructions: 'Restaura el orden de los glifos: A, C, B.',
+                    hint: 'El camino del conocimiento inicia, se eleva y luego regresa un paso.',
+                    glyphs: ['A', 'B', 'C', 'D', 'E', 'F'],
+                    targetClicks: 3
+                },
+                4: {
+                    title: 'La Matriz Invertida',
+                    instructions: 'Elige el primer glifo de la matriz invertida.',
+                    hint: 'El pasado se refleja en el futuro.',
+                    glyphs: ['I', 'J', 'K', 'L', 'M', 'N'],
+                    targetClicks: 1
+                },
+            };
+
+            // Función para barajar un array
+            function shuffleArray(array) {
+                for (let i = array.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [array[i], array[j]] = [array[j], array[i]];
+                }
+                return array;
+            }
+
+            // Renderizar los glifos para el desafío actual
+            function renderGlyphs() {
+                glyphsContainer.innerHTML = '';
+                let glyphsToDisplay = CHALLENGES[currentChallenge].glyphs;
+
+                // Para el Desafío 4, invertimos la matriz
+                if (currentChallenge === 4) {
+                    glyphsToDisplay = [...glyphsToDisplay].reverse();
+                }
+
+                const displayGlyphs = shuffleArray([...glyphsToDisplay]);
+                displayGlyphs.forEach(glyph => {
+                    const glyphElement = document.createElement('button');
+                    glyphElement.classList.add(
+                        'glyph-button',
+                        'w-20', 'h-20',
+                        'md:w-28', 'md:h-28',
+                        'rounded-xl',
+                        'bg-neutral-800',
+                        'flex', 'items-center', 'justify-center',
+                        'text-4xl', 'md:text-5xl',
+                        'font-electrolize',
+                        'text-neutral-500',
+                        'hover:text-green-400',
+                        'hover:border-green-400',
+                        'transition-all',
+                        'duration-300',
+                        'border-2', 'border-neutral-700',
+                        'cursor-pointer'
+                    );
+                    glyphElement.textContent = glyph;
+                    glyphElement.setAttribute('data-glyph', glyph);
+                    glyphsContainer.appendChild(glyphElement);
+                });
+            }
+
+            // Iniciar el desafío actual
+            function startCurrentChallenge() {
+                const { title, instructions, hint } = CHALLENGES[currentChallenge];
+                challengeTitle.textContent = title;
+                challengeInstructions.textContent = instructions;
+                challengeHint.textContent = hint;
+                userSelection = [];
+                isProcessing = false;
+                challengeMessage.textContent = '';
+                renderGlyphs();
+            }
+
+            // Lógica para verificar la solución de los desafíos
+            function checkSolution() {
+                isProcessing = true;
+                let isCorrect = false;
+
+                switch (currentChallenge) {
+                    case 1: // Sincronía
+                        if (userSelection[0] === userSelection[1]) {
+                            isCorrect = true;
+                        }
+                        break;
+                    case 2: // Enigma Cuántico
+                        const sum = parseInt(userSelection[0]) + parseInt(userSelection[1]);
+                        if (sum === 7) {
+                            isCorrect = true;
+                        }
+                        break;
+                    case 3: // Secuencia Críptica
+                        if (userSelection.join('') === 'ACB') {
+                            isCorrect = true;
+                        }
+                        break;
+                    case 4: // Matriz Invertida
+                        const originalGlyphs = CHALLENGES[4].glyphs;
+                        const firstInverted = originalGlyphs[originalGlyphs.length - 1];
+                        if (userSelection[0] === firstInverted) {
+                            isCorrect = true;
+                        }
+                        break;
+                }
+
+                if (isCorrect) {
+                    showMessage('¡Desafío completado!', 'green');
+                    setTimeout(nextChallenge, 1500);
+                } else {
+                    showMessage('Resonancia fallida. Inténtalo de nuevo.', 'red');
+                    setTimeout(() => {
+                        userSelection = [];
+                        // Habilitar todos los botones para reintentar
+                        document.querySelectorAll('.glyph-button').forEach(btn => {
+                            btn.classList.remove('neon-glow-button', 'text-green-400', 'border-green-400');
+                            btn.style.pointerEvents = 'auto';
+                        });
+                        isProcessing = false;
+                    }, 1000);
+                }
+            }
+
+            // Manejar clics en los glifos
+            glyphsContainer.addEventListener('click', (event) => {
+                if (isProcessing) return;
+
+                const target = event.target.closest('.glyph-button');
+                if (target) {
+                    const glyph = target.getAttribute('data-glyph');
+                    userSelection.push(glyph);
+                    target.classList.add('neon-glow-button', 'text-green-400', 'border-green-400');
+
+                    // Lógica para habilitar/deshabilitar el botón
+                    target.style.pointerEvents = 'none';
+
+                    if (userSelection.length === CHALLENGES[currentChallenge].targetClicks) {
+                        checkSolution();
+                    }
+                }
+            });
+
+            // Mostrar un mensaje de estado
+            function showMessage(message, type) {
+                challengeMessage.textContent = message;
+                challengeMessage.classList.remove('text-green-400', 'text-red-400');
+                if (type === 'green') {
+                    challengeMessage.classList.add('text-green-400');
+                } else {
+                    challengeMessage.classList.add('text-red-400');
+                }
+            }
+
+            // Avanzar al siguiente desafío
+            function nextChallenge() {
+                currentChallenge++;
+                if (CHALLENGES[currentChallenge]) {
+                    startCurrentChallenge();
+                } else {
+                    // Si no hay más desafíos, revela la recompensa
+                    revealRewardSection();
+                }
+            }
+
+            // Función para revelar la sección de recompensa
+            function revealRewardSection() {
+                rewardSection.classList.remove('hidden');
+                document.getElementById('desafio-section').scrollIntoView({ behavior: 'smooth' });
+            }
+
+            // Inicializar el primer desafío al cargar la página
+            startCurrentChallenge();
+        });
+    </script>
+</body>
+</html>
